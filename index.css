@@ -1,0 +1,99 @@
+/* src/App.css */
+:root {
+  --primaria: #1a2e44;
+  --secundaria: #c5a059;
+  --fundo-claro: #f8f9fa;
+}
+
+.container-geral {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar esticada */
+.navbar {
+  width: 100%;
+  background: var(--primaria);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 5%;
+  box-sizing: border-box; /* Garante que o padding não aumente a largura */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 0.9rem;
+}
+
+/* Hero Section Corrigida */
+.hero {
+  width: 100%;
+  background-color: var(--fundo-claro);
+  padding: 80px 5%;
+  text-align: center;
+  border-bottom: 5px solid var(--secundaria);
+  box-sizing: border-box;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: var(--primaria);
+  margin-bottom: 20px;
+}
+
+.btn-contato {
+  padding: 15px 35px;
+  background: var(--secundaria);
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Grid Responsivo */
+.servicos {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  box-sizing: border-box;
+}
+
+.card {
+  padding: 30px;
+  border: 1px solid #eee;
+  text-align: center;
+  background: white;
+}
+
+.footer {
+  width: 100%;
+  background: var(--primaria);
+  color: white;
+  padding: 40px 5%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-links {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}

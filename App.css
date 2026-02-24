@@ -1,0 +1,153 @@
+/* src/App.css */
+:root {
+  --primaria: #1a2e44;
+  --secundaria: #c5a059;
+  --fundo: #ffffff;
+  --texto: #333333;
+  --cinza-claro: #f8f9fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  color: var(--texto);
+  overflow-x: hidden; /* Evita scroll horizontal indesejado */
+}
+
+/* Navbar Responsiva */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: var(--primaria);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--secundaria);
+}
+
+/* Hero Adaptável */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--cinza-claro);
+  padding: 2rem 5%;
+  border-bottom: 6px solid var(--secundaria);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem); /* Fonte fluida: min 2rem, ideal 5vw, max 3.5rem */
+  color: var(--primaria);
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  max-width: 800px;
+}
+
+.btn-contato {
+  margin-top: 30px;
+  padding: 15px 40px;
+  background: var(--secundaria);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.btn-contato:hover {
+  background: #b08d4a;
+  transform: scale(1.05);
+}
+
+/* Grid de Serviços Responsivo */
+.servicos {
+  padding: 80px 5%;
+  display: grid;
+  /* Cria colunas automáticas que se quebram sozinhas */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  padding: 40px 25px;
+  border: 1px solid #eee;
+  background: white;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+/* Footer Adaptável */
+.footer {
+  background: var(--primaria);
+  color: white;
+  text-align: center;
+  padding: 50px 5%;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* MEDIA QUERIES PARA CELULARES */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 1.5rem 1rem;
+  }
+
+  .nav-links {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .servicos {
+    grid-template-columns: 1fr; /* Força uma coluna no celular */
+    padding: 40px 5%;
+  }
+
+  .hero {
+    min-height: 50vh;
+  }
+}
